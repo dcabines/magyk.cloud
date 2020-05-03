@@ -1,0 +1,13 @@
+{% import "menu-items.njk" as config %}
+
+{% macro menuItem(label, href, active) %}
+  <a {% if active %}class="active"{% endif %} href="{{href}}">{{label}}</a>
+{% endmacro %}
+
+{% macro menu(href) %}
+  <nav>
+    {% for item in config.items %}
+      {{ menuItem(item.label, item.href, href === item.href) }}
+    {% endfor %}
+  </nav>
+{% endmacro %}

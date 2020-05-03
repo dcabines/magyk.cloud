@@ -1,7 +1,12 @@
 {% extends '_includes/layout.njk' %}
+{% import "menu.njk" as menu %}
+
+{% block menu %}
+  {{ menu.menu("/samples") }}
+{% endblock %}
 
 {% block content %}
-<h1>Samples</h1>
+  <h1>Samples</h1>
 
-<p>Content</p>
+  <p>Content</p>
 {% endblock %}
